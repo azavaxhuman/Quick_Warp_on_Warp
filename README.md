@@ -12,7 +12,7 @@ This script is executed on your Android phone in Termux software and finally giv
 Simply copy and paste this command, enter the number of IPs you need and that's it!
 
 ```bash
-curl -sSL https://github.com/azavaxhuman/Quick_Warp_on_Warp/blob/main/install.sh -o install.sh && chmod +x install.sh && bash install.sh
+curl -sSL https://raw.githubusercontent.com/azavaxhuman/Quick_Warp_on_Warp/main/install.sh -o install.sh && chmod +x install.sh && bash install.sh
 
 ```
     
