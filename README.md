@@ -8,7 +8,7 @@
 
 
 Using this script, you can easily create warp-on-warp configurations by scanning warp IPs.
-This script is executed on your Android phone in Termux software and finally gives you the link to the Jason config file, which you can enter in the Hidify Next software (Android and Windows version).
+This script is executed on your Android phone in Termux software and finally gives you the link to the Json config file, which you can enter in the Hiddify Next software (Android and Windows version).
 
 ## 🛠️ Installation
 
