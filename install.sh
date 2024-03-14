@@ -39,8 +39,6 @@ case "$(uname -m)" in
 	;;
 esac
 
-
-
 cfwarpIP(){
 echo "download warp endpoint file base on your CPU architecture"
 if [[ -n $cpu ]]; then
@@ -185,7 +183,7 @@ i_w_res=$(echo "$i_values" | cut -d'@' -f4)
 
 
     # تعداد سطرهای فایل result.csv را بدست آورید
-    num_lines=$(wc -l < result.csv)
+    num_lines=$(wc -l < ./result.csv)
     echo ""
     echo "We have considered the number of ${num_lines} IPs."
     echo ""
@@ -203,7 +201,7 @@ fi
     # برای هر سطر در result.csv دستورات را اجرا کنید
     for ((i=2; i<=$num_lines; i++)); do
         # اطلاعات مورد نیاز از هر سطر را دریافت کنید
-        local line=$(sed -n "${i}p" result.csv)
+        local line=$(sed -n "${i}p" ./result.csv)
         local endpoint=$(echo "$line" | awk -F',' '{print $1}')
         local ip=$(echo "$endpoint" | awk -F':' '{print $1}')
         local port=$(echo "$endpoint" | awk -F':' '{print $2}')
@@ -295,11 +293,22 @@ echo "Elfina Tech(YT)  : youtube.com/@ElfinaTech"
 echo ""
 echo ""
 echo "Welcome to DDS-WOW(WARP on Warp)"
-echo "How many configurations do you need?"
+echo "1.Automatic scanning and execution (Android / Linux)"
+echo "2.Import custom IPs with result.csv file (windows)"
+read -r -p "Please choose an option: " option
+if [ "$option" = "1" ]; then
+	echo "How many configurations do you need?"
 read -r -p "Number of required configurations(suggested 5 or 10):  " number_of_configs
 cfwarpIP
 endipv4
 endipresult $number_of_configs
+elif [ "$option" = "2" ]; then
+	read -r -p "Number of required configurations(suggested 5 or 10):  " number_of_configs
+	process_result_csv $number_of_configs
+else
+	echo "Invalid option"
+fi
+
 
 
 }
