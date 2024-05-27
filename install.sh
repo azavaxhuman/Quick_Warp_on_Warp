@@ -239,8 +239,7 @@ new_json='{
       "peer_public_key": "'"$i_w_pb"'",
       "reserved": ['$i_w_res'],  
 
-      "mtu": 1120,
-      "fake_packets": "5-10"
+      "mtu": 1120
     }'
 
 
